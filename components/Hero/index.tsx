@@ -131,7 +131,7 @@ export function Hero() {
         className="relative w-full"
         style={{ height: "500vh" }}
       >
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
+        <div className="sticky top-0 h-[100svh] w-full overflow-hidden bg-background">
           <div
             className="absolute inset-0 z-0"
             style={{

@@ -40,7 +40,7 @@ export function Story() {
       className="relative w-full"
       style={{ height: "400vh" }}
     >
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         {/* Dark backdrop for the canvas */}
         <div
           className="absolute inset-0 z-0 bg-[#0a0a0a]"

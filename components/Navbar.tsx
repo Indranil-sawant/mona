@@ -106,52 +106,42 @@ export function Navbar() {
   return (
     <header
       id="navbar"
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-700"
-      style={{
-        background: scrolled
-          ? "rgba(10, 10, 10, 0.85)"
-          : "transparent",
-        backdropFilter: scrolled ? "blur(24px) saturate(160%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(24px) saturate(160%)" : "none",
-        borderBottom: scrolled
-          ? "1px solid rgba(255,195,0,0.15)"
-          : "1px solid transparent",
-        boxShadow: scrolled
-          ? "0 10px 40px rgba(0,0,0,0.4)"
-          : "none",
-      }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        scrolled 
+          ? "bg-[#0c0c0c]/85 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] border-b border-accent/10" 
+          : "bg-transparent border-b border-transparent"
+      }`}
       role="banner"
     >
       <nav
-        className={`mx-auto max-w-[1400px] px-6 md:px-12 flex items-center justify-between transition-all duration-500 ${scrolled ? 'h-20' : 'h-24 md:h-32'}`}
+        className={`mx-auto max-w-[1400px] px-[var(--section-px)] flex items-center justify-between transition-all duration-500 ${
+          scrolled ? 'h-16 md:h-20' : 'h-24 md:h-32'
+        }`}
         aria-label="Main navigation"
       >
         {/* ── Logo / Brand ─────────────────────────────────── */}
         <a
           href="#hero"
           id="navbar-logo"
-          className="flex items-center gap-3.5 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 rounded-sm transition-transform duration-300 hover:scale-[1.02]"
-          style={{ outlineColor: "#FFC300" }}
+          className="flex items-center gap-4 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 rounded-sm transition-transform duration-300 hover:scale-[1.01]"
           aria-label="MONA Mangoes — back to top"
         >
-          <MangoIcon className={`transition-all duration-300 ${scrolled ? 'w-8 h-8 md:w-10 md:h-10' : 'w-10 h-10 md:w-14 md:h-14'}`} />
+          <MangoIcon className={`transition-all duration-500 ${scrolled ? 'w-8 h-8 md:w-10' : 'w-10 h-10 md:w-14'}`} />
           <div className="flex flex-col justify-center">
             <span
-              className="font-black tracking-tighter leading-none"
+              className="font-black tracking-tighter leading-none text-shimmer"
               style={{
-                fontSize: scrolled ? "clamp(1.5rem, 3vw, 2.2rem)" : "clamp(1.8rem, 4vw, 3rem)",
-                background: "linear-gradient(90deg, #FFC300, #FF6A00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                fontSize: scrolled ? "clamp(1.4rem, 2.5vw, 2rem)" : "clamp(1.8rem, 4vw, 3rem)",
                 transition: "font-size 0.5s ease",
               }}
             >
               MONA
             </span>
             <span
-              className={`font-black tracking-[0.5em] uppercase transition-all duration-500 ${scrolled ? 'text-[8px] md:text-xs' : 'text-xs md:text-sm'}`}
-              style={{ color: "rgba(245,230,200,0.6)", marginTop: scrolled ? "0px" : "4px" }}
+              className={`font-black tracking-[0.5em] uppercase transition-all duration-500 text-foreground/40 ${
+                scrolled ? 'text-[8px] md:text-[10px]' : 'text-[10px] md:text-xs'
+              }`}
+              style={{ marginTop: scrolled ? "-2px" : "4px" }}
             >
               MANGOES
             </span>
@@ -160,7 +150,7 @@ export function Navbar() {
 
         {/* ── Desktop nav links ─────────────────────────────── */}
         <ul
-          className="hidden lg:flex items-center gap-4"
+          className="hidden lg:flex items-center gap-10"
           role="list"
         >
           {NAV_LINKS.map(({ label, href }) => (
@@ -168,24 +158,11 @@ export function Navbar() {
               <a
                 href={href}
                 id={`navbar-link-${label.toLowerCase()}`}
-                className="relative px-5 py-3 text-lg font-bold tracking-tight rounded-md transition-all duration-300 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                style={{
-                  color:        "rgba(245,230,200,0.85)",
-                  outlineColor: "#FFC300",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#FFC300";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,230,200,0.85)";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-                }}
+                className="relative py-2 text-sm font-bold tracking-widest uppercase text-foreground/60 transition-all duration-300 group hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 {label}
                 <span
-                  className="absolute bottom-1.5 left-5 right-5 h-[2px] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                  style={{ background: "linear-gradient(90deg, #FFC300, #FF6A00)" }}
+                  className="absolute bottom-0 left-0 w-full h-[1px] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left bg-accent"
                   aria-hidden="true"
                 />
               </a>
@@ -198,12 +175,9 @@ export function Navbar() {
           <a
             id="navbar-cta"
             href="#products"
-            className={`hidden sm:inline-flex items-center justify-center font-black uppercase tracking-tight transition-all duration-300 hover:scale-110 active:scale-95 shadow-[0_15px_40px_rgba(255,106,0,0.3)] hover:shadow-[0_20px_60px_rgba(255,106,0,0.5)] ${scrolled ? 'px-8 py-3 text-base rounded-full' : 'px-12 py-5 text-xl rounded-full'}`}
-            style={{
-              background:   "linear-gradient(135deg, #FFC300 0%, #FF6A00 100%)",
-              color:        "#1a1a1a",
-              outlineColor: "#FFD54F",
-            }}
+            className={`hidden sm:inline-flex items-center justify-center font-black uppercase tracking-tight transition-all duration-500 hover:scale-[1.03] active:scale-[0.98] shadow-[0_15px_40px_rgba(255,106,0,0.2)] hover:shadow-[0_20px_60px_rgba(255,106,0,0.4)] bg-gradient-to-br from-accent to-accent-alt text-[#0c0c0c] ${
+              scrolled ? 'px-8 py-3 text-sm rounded-full' : 'px-10 py-5 text-lg rounded-full'
+            }`}
             aria-label="Shop MONA Mangoes"
           >
             Shop Now
@@ -211,12 +185,9 @@ export function Navbar() {
 
           <button
             id="navbar-mobile-toggle"
-            className="lg:hidden flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-            style={{
-              color:        "rgba(255,195,0,0.9)",
-              outlineColor: "#FFC300",
-              background:   mobileOpen ? "rgba(255,195,0,0.15)" : "rgba(255,255,255,0.05)",
-            }}
+            className={`lg:hidden flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+              mobileOpen ? "bg-accent/10 border border-accent/20" : "bg-white/5 border border-white/5"
+            }`}
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -229,43 +200,24 @@ export function Navbar() {
       {/* ── Mobile dropdown menu ──────────────────────────────── */}
       <div
         id="mobile-menu"
-        className="lg:hidden overflow-hidden transition-all duration-500 ease-in-out"
-        style={{
-          maxHeight:  mobileOpen ? "450px" : "0",
-          opacity:    mobileOpen ? 1 : 0,
-          background: "rgba(10, 10, 10, 0.98)",
-          backdropFilter: "blur(30px)",
-          borderTop:  mobileOpen ? "1px solid rgba(255,195,0,0.2)" : "none",
-        }}
+        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out bg-[#0c0c0c] backdrop-blur-3xl ${
+          mobileOpen ? "max-h-[500px] opacity-100 border-t border-accent/20" : "max-h-0 opacity-0 border-t border-transparent"
+        }`}
         aria-hidden={!mobileOpen}
         role="menu"
       >
-        <ul className="px-8 py-8 flex flex-col gap-3" role="list">
+        <ul className="px-8 py-10 flex flex-col gap-4" role="list">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={label} role="none">
               <a
                 href={href}
                 id={`mobile-link-${label.toLowerCase()}`}
                 role="menuitem"
-                className="flex items-center gap-4 px-6 py-5 rounded-2xl text-2xl font-black transition-all duration-300"
-                style={{
-                  color:        "rgba(245,230,200,0.9)",
-                }}
+                className="flex items-center gap-4 px-6 py-5 rounded-2xl text-2xl font-black text-foreground/80 transition-all duration-300 hover:text-accent hover:bg-accent/5 active:scale-95"
                 onClick={() => setMobileOpen(false)}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#FFC300";
-                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,195,0,0.1)";
-                  (e.currentTarget as HTMLAnchorElement).style.paddingLeft = "2rem";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,230,200,0.9)";
-                  (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-                  (e.currentTarget as HTMLAnchorElement).style.paddingLeft = "1.5rem";
-                }}
               >
                 <div
-                  className="w-2 h-2 rounded-full"
-                  style={{ background: "#FFC300", boxShadow: "0 0 10px #FFC300" }}
+                  className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_10px_#FFC300]"
                   aria-hidden="true"
                 />
                 {label}
@@ -273,17 +225,12 @@ export function Navbar() {
             </li>
           ))}
 
-          <li role="none" className="mt-6">
+          <li role="none" className="mt-8">
             <a
               href="#products"
               id="mobile-cta"
               role="menuitem"
-              className="flex items-center justify-center gap-2 w-full px-8 py-6 rounded-full text-2xl font-black transition-all duration-300 active:scale-95"
-              style={{
-                background:   "linear-gradient(135deg, #FFC300 0%, #FF6A00 100%)",
-                color:        "#1a1a1a",
-                boxShadow:    "0 15px 40px rgba(255,106,0,0.4)",
-              }}
+              className="flex items-center justify-center gap-2 w-full px-8 py-6 rounded-full text-2xl font-black transition-all duration-300 active:scale-95 bg-gradient-to-r from-accent to-accent-alt text-[#0c0c0c] shadow-[0_15px_40px_rgba(255,106,0,0.3)]"
               onClick={() => setMobileOpen(false)}
             >
               Shop Collection
