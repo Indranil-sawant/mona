@@ -50,10 +50,10 @@ function CornerBlock({ progress, zoneStart, zoneEnd, position, children }: Corne
   const yDir   = isTop  ? -1 : 1;
 
   const posClasses = {
-    "top-left":     "top-14 left-6 md:top-24 md:left-14",
-    "top-right":    "top-14 right-6 md:top-24 md:right-14",
-    "bottom-left":  "bottom-10 left-6 md:bottom-20 md:left-14",
-    "bottom-right": "bottom-10 right-6 md:bottom-20 md:right-14",
+    "top-left":     "top-24 left-6 md:top-40 md:left-14",
+    "top-right":    "top-24 right-6 md:top-40 md:right-14",
+    "bottom-left":  "bottom-10 left-6 md:bottom-16 md:left-14",
+    "bottom-right": "bottom-10 right-6 md:bottom-16 md:right-14",
   };
 
   const alignClasses = {
@@ -94,15 +94,16 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
           Our Legacy
         </span>
         <h2 
-          className="font-black leading-[0.82] tracking-tighter text-white"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 6.5rem)" }}
+          className="font-black leading-[0.82] tracking-tighter text-shimmer"
+          style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)" }}
         >
           NURTURED<br />
           BY NATURE
         </h2>
-        <p className="text-[#f5e6c8] text-sm md:text-xl font-medium opacity-80 leading-tight">
+        <div className="h-[2px] w-24 bg-gradient-to-r from-[#FF6A00] to-transparent mt-2" />
+        <p className="text-[#f5e6c8] text-sm md:text-2xl font-medium opacity-80 leading-tight max-w-[250px] md:max-w-md">
           Grown in the legendary soils of Ratnagiri, every MONA mango is a 
-          <span className="text-[#FFC300]"> testament to time.</span>
+          <span className="text-[#FFC300] font-bold"> testament to time.</span>
         </p>
       </CornerBlock>
 
@@ -115,17 +116,20 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         zoneEnd={0.65}
         position="top-right"
       >
+        <span className="text-[11px] md:text-sm font-bold tracking-[0.4em] uppercase text-[#FFC300] mb-[-8px]">
+          The Artisanship
+        </span>
         <h2 
-          className="font-black leading-[0.95] text-white tracking-tighter"
-          style={{ fontSize: "clamp(2rem, 7vw, 5.5rem)" }}
+          className="font-black leading-[0.9] text-white tracking-tighter"
+          style={{ fontSize: "clamp(2.5rem, 9vw, 6.5rem)" }}
         >
           THE ART OF<br />
           <span className="text-[#FFC300]">SELECTION</span>
         </h2>
-        <div className="h-[2px] w-32 bg-gradient-to-l from-[#FF6A00] to-transparent mt-3" />
-        <p className="text-[#f5e6c8] text-sm md:text-lg font-medium opacity-80 leading-relaxed text-right">
+        <div className="h-[2px] w-32 bg-gradient-to-l from-[#FFC300] to-transparent mt-3" />
+        <p className="text-[#f5e6c8] text-sm md:text-xl font-medium opacity-80 leading-relaxed text-right max-w-[280px] md:max-w-lg">
           Only the top 1% of the harvest makes it to our luxury 
-          crates. Hand-selected for weight, aroma, and color.
+          crates. <span className="text-white">Hand-selected for weight, aroma, and color.</span>
         </p>
       </CornerBlock>
 
@@ -138,18 +142,24 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         zoneEnd={0.88}
         position="bottom-left"
       >
-        <h3 
-          className="font-black leading-[1.1] text-white tracking-tighter"
-          style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}
-        >
-          THE JOURNEY<br />
-          <span className="text-[#FF6A00]">TO YOU</span>
-        </h3>
-        <p className="text-[#f5e6c8] text-base md:text-xl font-medium leading-relaxed max-w-[400px]">
-          We ship directly from our orchards to ensure 
-          <span className="text-[#FFC300] font-bold"> maximum freshness</span> 
-          and unmatched flavor profile.
-        </p>
+        <div className="flex flex-col gap-6">
+          <h3 
+            className="font-black leading-[0.85] text-white tracking-tighter"
+            style={{ fontSize: "clamp(2rem, 5vw, 4.2rem)" }}
+          >
+            THE JOURNEY<br />
+            <span className="text-[#FF6A00]">DIRECT TO YOU</span>
+          </h3>
+          <p className="text-[#f5e6c8] text-lg md:text-2xl font-medium leading-tight max-w-[320px] md:max-w-xl">
+            We ship directly from our orchards to ensure 
+            <span className="text-[#FFC300] font-bold"> maximum freshness</span> 
+            and an unmatched flavor profile.
+          </p>
+          <div className="text-[12px] md:text-base font-bold tracking-[0.3em] uppercase text-[#FF6A00]/70 flex items-center gap-4">
+            <span className="w-12 h-px bg-[#FF6A00]/40" />
+            Orchard to Table
+          </div>
+        </div>
       </CornerBlock>
 
       {/* ════════════════════════════════════════════════════
@@ -161,20 +171,29 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         zoneEnd={1.0}
         position="bottom-right"
       >
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-end gap-6 text-right">
           <h2 
-            className="font-black leading-[0.9] text-white tracking-tighter text-right"
-            style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}
+            className="font-black leading-[0.82] text-shimmer tracking-tighter"
+            style={{ fontSize: "clamp(3.5rem, 11vw, 7.8rem)" }}
           >
             A TASTE OF<br />
             <span className="text-[#FFC300]">GOLD</span>
           </h2>
-          <p className="text-[#FF6A00] text-lg md:text-2xl font-black uppercase tracking-[0.2em] mt-4">
-            Uncompromising Quality
-          </p>
-          <span className="text-xs md:text-sm font-bold text-[#f5e6c8]/60 tracking-[0.4em] uppercase mt-2">
-            Experience the Gold Standard
-          </span>
+          <div className="flex flex-col items-end">
+            <p className="text-[#FF6A00] text-xl md:text-3xl font-black uppercase tracking-[0.3em] leading-none">
+              Uncompromising Quality
+            </p>
+            <span className="text-sm md:text-lg font-bold text-[#f5e6c8]/50 tracking-[0.4em] uppercase mt-4">
+              The Purest Selection
+            </span>
+          </div>
+          
+          {/* Circular badge element (decorative) */}
+          <div className="mt-8 w-24 h-24  md:w-32 md:h-32 rounded-full border border-[#FFC300]/20 flex items-center justify-center p-4 text-center">
+            <span className="text-[10px] md:text-[12px] font-bold text-[#FFC300] uppercase tracking-tighter leading-none">
+              Certified<br />Premium<br />Harvest
+            </span>
+          </div>
         </div>
       </CornerBlock>
     </>

@@ -21,7 +21,7 @@
 import { useEffect, useRef, useCallback } from "react";
 
 /* ── Constants ──────────────────────────────────────────────── */
-const FRAME_COUNT   = 144;                        // total frames in images2
+const FRAME_COUNT   = 240;                        // total frames in images2
 const FRAME_PATH    = (i: number) =>
   `/images2/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
 const LERP_FACTOR   = 0.12;                       // slightly faster smoothing

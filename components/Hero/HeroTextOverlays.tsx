@@ -53,8 +53,8 @@ function CornerBlock({ progress, zoneStart, zoneEnd, position, children }: Corne
   const yDir   = isTop  ? -1 : 1;
 
   const posClasses = {
-    "top-left":     "top-14 left-6 md:top-24 md:left-14",
-    "top-right":    "top-14 right-6 md:top-24 md:right-14",
+    "top-left":     "top-24 left-6 md:top-40 md:left-14",
+    "top-right":    "top-24 right-6 md:top-40 md:right-14",
     "bottom-left":  "bottom-10 left-6 md:bottom-20 md:left-14",
     "bottom-right": "bottom-10 right-6 md:bottom-20 md:right-14",
   };
