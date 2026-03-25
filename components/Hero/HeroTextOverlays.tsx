@@ -207,32 +207,51 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
         zoneEnd={1.0}
         position="bottom-right"
       >
-        <div className="flex flex-col items-end gap-8">
-          <div className="text-right">
-            <p className="text-sm md:text-xl font-bold mb-2 text-[#f5e6c8]/60 uppercase tracking-widest">Limited Seasonal Batch</p>
-            <div className="flex gap-2 text-[#FFC300] justify-end text-lg md:text-2xl">
-              {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
+        <div className="flex flex-col items-end gap-12">
+          {/* MASSIVE BATCH CALLOUT */}
+          <div className="text-right flex flex-col items-end">
+            <div className="flex gap-3 text-[#FFC300] justify-end text-3xl md:text-5xl mb-4 group transition-transform hover:scale-110">
+              {"★★★★★".split("").map((s, i) => (
+                <motion.span 
+                  key={i}
+                  animate={{ scale: [1, 1.2, 1], rotate: [0, 5, 0] }}
+                  transition={{ delay: i * 0.1, repeat: Infinity, duration: 4 }}
+                >
+                  {s}
+                </motion.span>
+              ))}
             </div>
+            <p className="text-xl md:text-3xl font-black text-white uppercase tracking-[0.3em] opacity-80 mb-2 leading-none">
+              LIMITED <span className="text-[#FF6A00]">SEASONAL</span> BATCH
+            </p>
+            <span className="text-xs md:text-sm font-bold text-[#FFC300]/60 tracking-[0.5em] uppercase">
+              Authenticated · Hand-Selected
+            </span>
           </div>
           
-          <div className="flex flex-col gap-5 items-end w-full sm:w-auto">
+          {/* MASSIVE BUTTONS */}
+          <div className="flex flex-col gap-6 items-end w-full sm:w-auto">
             <a
               id="hero-cta-collection"
               href="/collection"
-              className="w-full sm:w-auto px-10 py-5 translate-x-2 md:px-14 md:py-7 bg-gradient-to-r from-[#FFC300] to-[#FF6A00] text-[#1a1a1a] font-black rounded-full text-base md:text-xl uppercase tracking-tighter transition-all hover:scale-105 active:scale-95 shadow-[0_12px_48px_rgba(255,195,0,0.4)] pointer-events-auto flex items-center justify-center gap-3"
+              className="w-full sm:w-auto px-16 py-8 md:px-24 md:py-10 bg-gradient-to-r from-[#FFC300] to-[#FF6A00] text-[#0a0a0a] font-black rounded-full text-xl md:text-3xl uppercase tracking-tighter transition-all hover:scale-[1.05] active:scale-[0.98] shadow-[0_30px_90px_rgba(255,106,0,0.5)] pointer-events-auto flex items-center justify-center gap-6 group"
             >
               <span>Explore Collection</span>
-              <span className="text-2xl">→</span>
+              <span className="text-4xl transition-transform group-hover:translate-x-2">→</span>
             </a>
             <button
               id="hero-cta-order"
               onClick={(e) => { e.preventDefault(); onOrderNow(); }}
-              className="w-full sm:w-auto px-10 py-5 md:px-14 md:py-7 border-2 border-[#FFC300]/30 text-[#FFC300] font-black rounded-full text-base md:text-xl uppercase tracking-tighter hover:bg-[#FFC300]/10 backdrop-blur-xl transition-all hover:scale-105 active:scale-95 pointer-events-auto"
+              className="w-full sm:w-auto px-16 py-8 md:px-24 md:py-10 border-4 border-[#FFC300]/20 text-[#FFC300] font-black rounded-full text-xl md:text-3xl uppercase tracking-tighter hover:bg-[#FFC300]/10 backdrop-blur-3xl transition-all hover:scale-[1.05] active:scale-[0.98] pointer-events-auto"
             >
               Order Now
             </button>
           </div>
         </div>
+
+        {/* EXTRA FLOW ELEMENTS: Glowing Blobs */}
+        <div className="absolute right-[-40vw] bottom-[-40vh] w-[100vw] h-[100vw] rounded-full bg-[#FF6A00]/5 blur-[150px] -z-10 pointer-events-none" />
+        <div className="absolute left-[-20vw] top-[-20vh] w-[60vw] h-[60vw] rounded-full bg-[#FFC300]/5 blur-[150px] -z-10 pointer-events-none" />
       </CornerBlock>
     </>
   );

@@ -6,20 +6,24 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Hero }   from "@/components/Hero";
+import { Story }  from "@/components/Story";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-[#0a0a0a]">
       {/* ── Persistent top navbar ─────────────────────────── */}
       <Navbar />
 
       {/* ── Hero scrollytelling section ────────────────────── */}
       <Hero />
 
-      {/* ── Placeholder sections (add your content here) ──── */}
+      {/* ── Story scrollytelling section ───────────────────── */}
+      <Story />
+
+      {/* ── Product listings — current placeholder ────────── */}
       <section
         id="products"
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex items-center justify-center p-6"
         style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #3b2f1c 100%)" }}
       >
         <div className="text-center">
