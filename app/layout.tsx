@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { SmoothScroll } from "@/components/SmoothScroll";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -38,7 +40,9 @@ export default function RootLayout({
           color:      "#f5e6c8",
         }}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

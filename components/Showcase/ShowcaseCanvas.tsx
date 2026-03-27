@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useCallback } from "react";
 
-const FRAME_COUNT = 239;
+const FRAME_COUNT = 240;
 const FRAME_PATH = (i: number) =>
-  `/images3/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
+  `/images3/${String(i).padStart(4, "0")}.webp`;
 const LERP_FACTOR = 0.08;
 const PRELOAD_BATCH = 24;
 

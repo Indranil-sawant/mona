@@ -1,18 +1,5 @@
 "use client";
 
-/**
- * StoryTextOverlays.tsx
- * ──────────────────────────────────────────────────────────────────────────
- * Production-Grade Typography & Layout Architecture.
- * 
- * Features:
- *  • Unified Fluid Typography System (clamp-based)
- *  • Intentional Asymmetrical Composition (Left-Biased)
- *  • 100svh Mobile Viewport Handling
- *  • Zero-Overlap Scroll Staggering
- * ──────────────────────────────────────────────────────────────────────────
- */
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -79,18 +66,9 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         <span className="text-[clamp(0.7rem,0.9vw,0.85rem)] font-bold tracking-[0.2em] uppercase text-accent/60 leading-none">
           The Heritage
         </span>
-<<<<<<< HEAD
         <h2 className="text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[1.05] text-white text-balance uppercase">
           OUR<br />
           <span className="text-shimmer">ORCHARDS</span>
-=======
-        <h2 
-          className="font-black leading-[0.82] tracking-tighter text-shimmer"
-          style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
-        >
-          NURTURED<br />
-          BY NATURE
->>>>>>> 8226d96 ( Added 3rd section for the site)
         </h2>
         <p className="text-[clamp(1.2rem,2.2vw,1.6rem)] font-medium leading-[1.3] text-foreground/50 text-pretty">
           Nurtured by generations in the heart of Maharashtra.
@@ -107,7 +85,6 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         <span className="text-[clamp(0.7rem,0.9vw,0.85rem)] font-bold tracking-[0.2em] uppercase text-accent/60 leading-none">
           Selection Process
         </span>
-<<<<<<< HEAD
         <h2 className="text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[1.05] text-white text-balance uppercase">
           HAND<br />
           <span className="text-accent-alt">PICKED</span>
@@ -115,43 +92,6 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         <div className="p-8 bg-black/40 backdrop-blur-2xl border border-white/5 rounded-[40px] max-w-full md:max-w-[480px] mt-2">
           <p className="text-[clamp(0.95rem,1.2vw,1.1rem)] leading-[1.6] text-foreground/90 italic text-pretty">
             &quot;Only 1 in 100 mangoes makes it to the MONA Gold selection. Authenticity in every fiber.&quot;
-=======
-        <h2 
-          className="font-black leading-[0.9] text-white tracking-tighter"
-          style={{ fontSize: "clamp(2.2rem, 6vw, 4.5rem)" }}
-        >
-          THE ART OF<br />
-          <span className="text-[#FFC300]">SELECTION</span>
-        </h2>
-        <div className="h-[2px] w-32 bg-gradient-to-l from-[#FFC300] to-transparent mt-3" />
-        <p className="text-[#f5e6c8] text-sm md:text-xl font-medium opacity-80 leading-relaxed text-right max-w-[280px] md:max-w-lg">
-          Only the top 1% of the harvest makes it to our luxury 
-          crates. <span className="text-white">Hand-selected for weight, aroma, and color.</span>
-        </p>
-      </CornerBlock>
-
-      {/* ════════════════════════════════════════════════════
-          ZONE 3 · Bottom-Left · THE MOMENT (55%–85%)
-          ════════════════════════════════════════════════════ */}
-      <CornerBlock
-        progress={scrollProgress}
-        zoneStart={0.55}
-        zoneEnd={0.88}
-        position="bottom-left"
-      >
-        <div className="flex flex-col gap-6">
-          <h3 
-            className="font-black leading-[0.85] text-white tracking-tighter"
-            style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-          >
-            THE JOURNEY<br />
-            <span className="text-[#FF6A00]">DIRECT TO YOU</span>
-          </h3>
-          <p className="text-[#f5e6c8] text-lg md:text-2xl font-medium leading-tight max-w-[320px] md:max-w-xl">
-            We ship directly from our orchards to ensure 
-            <span className="text-[#FFC300] font-bold"> maximum freshness</span> 
-            and an unmatched flavor profile.
->>>>>>> 8226d96 ( Added 3rd section for the site)
           </p>
         </div>
       </CornerBlock>
@@ -169,7 +109,7 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
           FROM THE<br />
           <span className="text-accent">SOURCE</span>
         </h3>
-        <div className="flex items-center gap-8 group mt-6">
+        <div className="flex items-center gap-8 group mt-6 pointer-events-auto">
           <div className="w-1 px-4 py-12 border-l-2 border-accent/20 flex flex-col justify-between">
             <div className="w-3 h-3 rounded-full bg-accent -ml-[11px] shadow-[0_0_15px_#FFC300]" />
             <div className="w-3 h-3 rounded-full bg-accent-alt -ml-[11px]" />
@@ -193,8 +133,7 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         zoneStart={0.91}
         zoneEnd={1.0}
       >
-<<<<<<< HEAD
-        <div className="flex flex-col items-start gap-12">
+        <div className="flex flex-col items-start gap-12 pointer-events-auto">
           <div className="text-left flex flex-col items-start gap-4">
             <h2 className="text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[1.05] text-shimmer text-balance uppercase">
               PURE<br />
@@ -202,19 +141,6 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
             </h2>
             <p className="text-[clamp(1.2rem,2.2vw,1.6rem)] font-medium leading-[1.3] text-foreground/50 text-pretty">
               UNCOMPROMISING QUALITY
-=======
-        <div className="flex flex-col items-end gap-6 text-right">
-          <h2 
-            className="font-black leading-[0.82] text-shimmer tracking-tighter"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
-          >
-            A TASTE OF<br />
-            <span className="text-[#FFC300]">GOLD</span>
-          </h2>
-          <div className="flex flex-col items-end">
-            <p className="text-[#FF6A00] text-lg md:text-2xl font-black uppercase tracking-[0.2em] leading-none">
-              Uncompromising Quality
->>>>>>> 8226d96 ( Added 3rd section for the site)
             </p>
           </div>
           
