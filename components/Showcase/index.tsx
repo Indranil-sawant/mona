@@ -38,8 +38,7 @@ export function ShowcaseSection() {
     <section
       ref={scrollZoneRef}
       id="showcase"
-      className="relative w-full z-20 bg-[#050505]"
-      style={{ height: "500vh" }}
+      className="relative w-full z-20 bg-[#050505] h-[300vh] md:h-[400vh] xl:h-[500vh]"
       aria-label="Mango Showcase Section"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">

@@ -128,8 +128,7 @@ export function Hero() {
       <div
         ref={scrollZoneRef}
         id="hero"
-        className="relative w-full"
-        style={{ height: "500vh" }}
+        className="relative w-full h-[300vh] md:h-[400vh] lg:h-[500vh]"
       >
         <div className="sticky top-0 h-[100svh] w-full overflow-hidden bg-background">
           <div

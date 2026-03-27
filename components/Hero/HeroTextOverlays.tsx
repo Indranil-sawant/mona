@@ -42,19 +42,29 @@ interface CornerBlockProps {
   progress: number;
   zoneStart: number;
   zoneEnd: number;
+  position?: "left" | "right";
+  textAlign?: "left" | "right";
   children: React.ReactNode;
 }
 
-function CornerBlock({ progress, zoneStart, zoneEnd, children }: CornerBlockProps) {
+function CornerBlock({ progress, zoneStart, zoneEnd, position = "left", textAlign = "left", children }: CornerBlockProps) {
   const { opacity, tx } = zoneVisible(progress, zoneStart, zoneEnd);
+
+  // Use explicit margin/padding offsets to push wildly to the edges
+  const posClasses = 
+    position === 'left' ? 'left-4 sm:left-6 md:left-12 lg:left-24 xl:left-32' :
+    'right-4 sm:right-6 md:right-12 lg:right-24 xl:right-32';
+
+  const alignClasses = 
+    textAlign === 'left' ? 'items-start text-left' :
+    'items-end text-right';
 
   return (
     <div
-      className="absolute z-30 flex flex-col gap-3 md:gap-4 w-full 
-                 max-w-[90%] md:max-w-[600px] 
+      className={`absolute z-30 flex flex-col gap-3 md:gap-4 
+                 w-auto max-w-[90vw] md:max-w-xl xl:max-w-3xl
                  top-[40%] md:top-1/2 -translate-y-1/2 
-                 left-[clamp(1rem,8vw,3rem)] md:left-[10%]
-                 text-left items-start"
+                 ${posClasses} ${alignClasses}`}
       style={{
         opacity,
         transform: `translateX(${tx}px)`,
@@ -71,72 +81,89 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
   return (
     <div className="container-premium relative min-h-[100svh] w-full overflow-x-hidden pointer-events-none px-[clamp(1rem,4vw,3rem)] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
       
-      {/* ── ZONE 1: BRAND INTRO (0%–33%) ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0} zoneEnd={0.33}>
-        <span className="text-[clamp(0.7rem,0.9vw,0.85rem)] font-bold tracking-[0.2em] uppercase text-accent/60 leading-none">
+      {/* ── ZONE 1: BRAND INTRO (0%–33%) LEFT ── */}
+      <CornerBlock progress={scrollProgress} zoneStart={0} zoneEnd={0.33} position="left" textAlign="left">
+        <span className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Harvested For Perfection
         </span>
-        <h1 className="text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[1.05] text-shimmer text-balance uppercase">
+        <h1 
+          className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+          style={{ fontSize: "clamp(3rem, 12vw, 9rem)" }}
+        >
           MONA<br />
-          MANGOES
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">MANGOES</span>
         </h1>
-        <p className="text-[clamp(1.2rem,2.2vw,1.6rem)] font-medium leading-[1.3] text-foreground/50 text-pretty">
-          Indulge in <span className="text-accent underline decoration-accent/20 underline-offset-8">Pure Sweetness</span>
-        </p>
+        <div className="mt-4 sm:mt-8 flex items-center gap-3 sm:gap-5 max-w-[85vw]">
+          <div className="w-8 sm:w-16 h-1 bg-[#FF6A00] shrink-0 drop-shadow-md" />
+          <p className="text-base sm:text-lg md:text-2xl text-white/90 font-medium drop-shadow-md text-pretty">
+            Indulge in <span className="text-[#FFC300] font-serif italic pr-1 whitespace-nowrap">Pure Sweetness</span>
+          </p>
+        </div>
       </CornerBlock>
 
-      {/* ── ZONE 2: EXCELLENCE (35%–64%) ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.35} zoneEnd={0.64}>
-        <span className="text-[clamp(0.7rem,0.9vw,0.85rem)] font-bold tracking-[0.2em] uppercase text-accent/60 leading-none">
+      {/* ── ZONE 2: EXCELLENCE (35%–64%) RIGHT ── */}
+      <CornerBlock progress={scrollProgress} zoneStart={0.35} zoneEnd={0.64} position="right" textAlign="left">
+        <span className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Premium Selection
         </span>
-        <h2 className="text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[1.05] text-white text-balance uppercase">
+        <h2 
+          className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+          style={{ fontSize: "clamp(2.5rem, 10vw, 7rem)" }}
+        >
           EXCELLENCE<br />
-          IN EVERY BITE
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">IN EVERY BITE</span>
         </h2>
-        <div className="h-[2px] w-12 bg-accent/40 mt-4" />
+        <div className="h-[2px] w-8 sm:w-12 bg-[#FFC300]/40 mt-2 sm:mt-4" />
       </CornerBlock>
 
-      {/* ── ZONE 3: ORIGIN (66%–89%) ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.66} zoneEnd={0.89}>
-        <span className="text-[clamp(0.7rem,0.9vw,0.85rem)] font-bold tracking-[0.2em] uppercase text-accent/60 leading-none">
+      {/* ── ZONE 3: ORIGIN (66%–89%) LEFT ── */}
+      <CornerBlock progress={scrollProgress} zoneStart={0.66} zoneEnd={0.89} position="left" textAlign="left">
+        <span className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Authentic Provenance
         </span>
-        <h3 className="text-[clamp(1.8rem,4vw,3rem)] font-bold leading-[1.1] text-white text-balance uppercase">
+        <h3 
+          className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+          style={{ fontSize: "clamp(2rem, 8vw, 5.5rem)" }}
+        >
           HANDPICKED<br />
-          FROM SOURCE
+          <span className="text-[#FFC300]">FROM SOURCE</span>
         </h3>
-        <p className="text-[clamp(0.95rem,1.2vw,1.1rem)] leading-[1.6] text-foreground/40 max-w-[400px]">
-          Directly from the sun-drenched orchards of Ratnagiri, where generation-old tradition meets modern excellence.
-        </p>
+        <div className="mt-4 sm:mt-6 bg-black/40 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl backdrop-blur-md border border-white/10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-md text-left flex flex-col gap-4 shadow-2xl">
+          <p className="text-sm sm:text-base md:text-xl text-white/95 font-medium leading-snug">
+            Directly from the sun-drenched orchards of Ratnagiri, where generation-old tradition meets modern excellence.
+          </p>
+        </div>
       </CornerBlock>
 
-      {/* ── ZONE 4: CTA (91%–100%) ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.91} zoneEnd={1.0}>
-        <div className="flex flex-col items-start gap-10">
-          <div className="flex flex-col items-start gap-2">
-            <h2 className="text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.05] text-white uppercase text-balance">
+      {/* ── ZONE 4: CTA (91%–100%) RIGHT ── */}
+      <CornerBlock progress={scrollProgress} zoneStart={0.91} zoneEnd={1.0} position="right" textAlign="left">
+        <div className="flex flex-col items-start gap-6 sm:gap-10">
+          <div className="flex flex-col items-start gap-1 sm:gap-2">
+            <h2 
+              className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+              style={{ fontSize: "clamp(2.5rem, 9vw, 6rem)" }}
+            >
               LIMITED<br />
-              <span className="text-accent">GOLD</span> BATCH
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">GOLD BATCH</span>
             </h2>
-            <p className="text-[clamp(0.7rem,0.9vw,0.85rem)] font-bold tracking-[0.2em] uppercase text-accent/30">
+            <p className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mt-1 sm:mt-2">
               Authenticated · Premium
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mt-2 sm:mt-4 pointer-events-auto">
             <a
               id="hero-cta-collection"
               href="/collection"
-              className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full text-sm uppercase tracking-widest transition-all hover:bg-white/10 active:scale-[0.97] pointer-events-auto flex items-center justify-center gap-6 group"
+              className="px-8 sm:px-10 py-4 sm:py-5 bg-white/5 border border-white/10 text-white font-black rounded-full text-xs sm:text-sm uppercase tracking-widest transition-all hover:bg-white/10 active:scale-[0.97] flex items-center justify-center gap-4 sm:gap-6 group"
             >
               <span>Collection</span>
-              <span className="text-accent transition-transform group-hover:translate-x-2">→</span>
+              <span className="text-[#FFC300] transition-transform group-hover:translate-x-2">→</span>
             </a>
             <button
               id="hero-cta-order"
               onClick={(e) => { e.preventDefault(); onOrderNow(); }}
-              className="px-10 py-5 bg-gradient-to-r from-accent to-accent-alt text-[#0a0a0a] font-black rounded-full text-sm uppercase tracking-widest transition-all hover:scale-[1.03] active:scale-[0.97] pointer-events-auto shadow-2xl"
+              className="px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-[#FFC300] to-[#FF6A00] text-black font-black rounded-full text-sm sm:text-lg uppercase tracking-widest transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(255,195,0,0.4)] sm:shadow-[0_0_40px_rgba(255,195,0,0.5)]"
             >
               Order Now
             </button>

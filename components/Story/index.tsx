@@ -37,8 +37,7 @@ export function Story() {
     <div
       ref={scrollZoneRef}
       id="story"
-      className="relative w-full"
-      style={{ height: "400vh" }}
+      className="relative w-full h-[300vh] lg:h-[400vh]"
     >
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         {/* Dark backdrop for the canvas */}
