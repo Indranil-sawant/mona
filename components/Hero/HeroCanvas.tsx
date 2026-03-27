@@ -22,10 +22,10 @@
 import { useEffect, useRef, useCallback } from "react";
 
 /* ── Constants ──────────────────────────────────────────────── */
-const FRAME_COUNT   = 240;                        // total frames in sequence
-const FRAME_PATH    = (i: number) =>
+const FRAME_COUNT = 240;                        // total frames in sequence
+const FRAME_PATH = (i: number) =>
   `/images/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
-const LERP_FACTOR   = 0.10;                       // smoothing (0 = no lerp, 1 = instant)
+const LERP_FACTOR = 0.10;                       // smoothing (0 = no lerp, 1 = instant)
 const PRELOAD_BATCH = 20;                         // how many frames to load first
 
 interface HeroCanvasProps {
@@ -35,15 +35,15 @@ interface HeroCanvasProps {
 }
 
 export function HeroCanvas({ scrollProgress, className = "" }: HeroCanvasProps) {
-  const canvasRef         = useRef<HTMLCanvasElement>(null);
-  const framesRef         = useRef<(HTMLImageElement | null)[]>(
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const framesRef = useRef<(HTMLImageElement | null)[]>(
     Array(FRAME_COUNT).fill(null)
   );
-  const currentFrameRef   = useRef<number>(0);   // smoothed (LERP) frame index
-  const targetFrameRef    = useRef<number>(0);   // raw frame index from scroll
-  const rafRef            = useRef<number>(0);
-  const reducedMotionRef  = useRef<boolean>(false);
-  const loadedCountRef    = useRef<number>(0);
+  const currentFrameRef = useRef<number>(0);   // smoothed (LERP) frame index
+  const targetFrameRef = useRef<number>(0);   // raw frame index from scroll
+  const rafRef = useRef<number>(0);
+  const reducedMotionRef = useRef<boolean>(false);
+  const loadedCountRef = useRef<number>(0);
 
   /* ── Draw a single frame onto the canvas ────────────────── */
   const drawFrame = useCallback((frameIndex: number) => {
@@ -58,11 +58,11 @@ export function HeroCanvas({ scrollProgress, className = "" }: HeroCanvasProps) 
     if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const W   = canvas.width;   // already DPR-scaled
-    const H   = canvas.height;
+    const W = canvas.width;   // already DPR-scaled
+    const H = canvas.height;
 
     // ── Cover fit (like background-size: cover) ────────────
-    const imgAspect    = img.naturalWidth / img.naturalHeight;
+    const imgAspect = img.naturalWidth / img.naturalHeight;
     const canvasAspect = (W / dpr) / (H / dpr);
     let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
 
@@ -83,8 +83,8 @@ export function HeroCanvas({ scrollProgress, className = "" }: HeroCanvasProps) 
   /* ── RAF animation loop with LERP ───────────────────────── */
   const animate = useCallback(() => {
     const current = currentFrameRef.current;
-    const target  = targetFrameRef.current;
-    const delta   = target - current;
+    const target = targetFrameRef.current;
+    const delta = target - current;
 
     // Lerp towards target frame
     const next = Math.abs(delta) < 0.1 ? target : current + delta * LERP_FACTOR;
@@ -102,7 +102,7 @@ export function HeroCanvas({ scrollProgress, className = "" }: HeroCanvasProps) 
 
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    canvas.width  = rect.width  * dpr;
+    canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
 
     // Immediately redraw current frame after resize
@@ -119,7 +119,7 @@ export function HeroCanvas({ scrollProgress, className = "" }: HeroCanvasProps) 
         }
         const img = new Image();
         img.src = FRAME_PATH(index + 1); // files are 1-indexed
-        img.onload  = () => { framesRef.current[index] = img; loadedCountRef.current++; resolve(); };
+        img.onload = () => { framesRef.current[index] = img; loadedCountRef.current++; resolve(); };
         img.onerror = () => { framesRef.current[index] = null; resolve(); };
         framesRef.current[index] = img;
       });

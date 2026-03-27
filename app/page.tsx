@@ -5,8 +5,9 @@
  */
 
 import { Navbar } from "@/components/Navbar";
-import { Hero }   from "@/components/Hero";
-import { Story }  from "@/components/Story";
+import { Hero } from "@/components/Hero";
+import { Story } from "@/components/Story";
+import { ShowcaseSection } from "@/components/Showcase";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Story />
       </section>
 
+<<<<<<< HEAD
       {/* ── Product listings ─────────────────────────────── */}
       <section
         id="products"
@@ -90,6 +92,10 @@ export default function Home() {
           </div>
         </div>
       </footer>
+=======
+      {/* ── Showcase: The Varieties ────────────────────────── */}
+      <ShowcaseSection />
+>>>>>>> 8226d96 ( Added 3rd section for the site)
     </main>
   );
 }
