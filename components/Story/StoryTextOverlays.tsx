@@ -1,5 +1,18 @@
 "use client";
 
+/**
+ * StoryTextOverlays.tsx
+ * ──────────────────────────────────────────────────────────────────────────
+ * Production-Grade Typography & Layout Architecture.
+ * 
+ * Features:
+ *  • Unified Fluid Typography System (clamp-based)
+ *  • Intentional Asymmetrical Composition (Left-Biased)
+ *  • 100svh Mobile Viewport Handling
+ *  • Zero-Overlap Scroll Staggering
+ * ──────────────────────────────────────────────────────────────────────────
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -109,7 +122,7 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
           FROM THE<br />
           <span className="text-accent">SOURCE</span>
         </h3>
-        <div className="flex items-center gap-8 group mt-6 pointer-events-auto">
+        <div className="flex items-center gap-8 group mt-6">
           <div className="w-1 px-4 py-12 border-l-2 border-accent/20 flex flex-col justify-between">
             <div className="w-3 h-3 rounded-full bg-accent -ml-[11px] shadow-[0_0_15px_#FFC300]" />
             <div className="w-3 h-3 rounded-full bg-accent-alt -ml-[11px]" />
@@ -133,7 +146,7 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         zoneStart={0.91}
         zoneEnd={1.0}
       >
-        <div className="flex flex-col items-start gap-12 pointer-events-auto">
+        <div className="flex flex-col items-start gap-12">
           <div className="text-left flex flex-col items-start gap-4">
             <h2 className="text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[1.05] text-shimmer text-balance uppercase">
               PURE<br />

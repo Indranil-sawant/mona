@@ -17,6 +17,7 @@
   --color-accent:     var(--accent);
   --color-accent-alt: var(--accent-alt);
   --font-sans:        var(--font-outfit);
+  --font-serif:       var(--font-playfair);
 }
 
 /* ── Global reset / base ─────────────────────────────────────── */
