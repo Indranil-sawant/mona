@@ -86,7 +86,7 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
       
       {/* ── ZONE 1: BRAND INTRO (0%–33%) LEFT ── */}
       <CornerBlock progress={scrollProgress} zoneStart={0} zoneEnd={0.33} position="left" textAlign="left">
-        <span className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
+        <span className="text-[#1B4332] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Harvested For Perfection
         </span>
         <h1 
@@ -94,19 +94,19 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
           style={{ fontSize: "clamp(2.5rem, 10vw, 7.5rem)" }}
         >
           MONA<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">MANGOES</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B4332] to-[#2D6A4F]">MANGOES</span>
         </h1>
         <div className="mt-4 sm:mt-8 flex items-center gap-3 sm:gap-5 max-w-[85vw]">
-          <div className="w-8 sm:w-16 h-1 bg-[#FF6A00] shrink-0 drop-shadow-md" />
+          <div className="w-8 sm:w-16 h-1 bg-[#2D6A4F] shrink-0 drop-shadow-md" />
           <p className="text-sm sm:text-base md:text-xl text-white/90 font-bold drop-shadow-md text-pretty">
-            Indulge in <span className="text-[#FFC300] font-sans italic pr-1 whitespace-nowrap">Pure Sweetness</span>
+            Indulge in <span className="text-[#1B4332] font-sans italic pr-1 whitespace-nowrap">Pure Sweetness</span>
           </p>
         </div>
       </CornerBlock>
 
-      {/* ── ZONE 2: EXCELLENCE (35%–64%) RIGHT ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.35} zoneEnd={0.64} position="right" textAlign="right">
-        <span className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
+      {/* ── ZONE 2: EXCELLENCE (35%–64%) LEFT ── */}
+      <CornerBlock progress={scrollProgress} zoneStart={0.35} zoneEnd={0.64} position="left" textAlign="left">
+        <span className="text-[#1B4332] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Premium Selection
         </span>
         <h2 
@@ -114,14 +114,14 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
           style={{ fontSize: "clamp(2.25rem, 8vw, 6rem)" }}
         >
           EXCELLENCE<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">IN EVERY BITE</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B4332] to-[#2D6A4F]">IN EVERY BITE</span>
         </h2>
-        <div className="h-[2px] w-8 sm:w-12 bg-[#FFC300]/40 mt-2 sm:mt-4" />
+        <div className="h-[2px] w-8 sm:w-12 bg-[#1B4332]/40 mt-2 sm:mt-4" />
       </CornerBlock>
 
       {/* ── ZONE 3: ORIGIN (66%–89%) LEFT ── */}
       <CornerBlock progress={scrollProgress} zoneStart={0.66} zoneEnd={0.89} position="left" textAlign="left">
-        <span className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
+        <span className="text-[#1B4332] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Authentic Provenance
         </span>
         <h3 
@@ -129,7 +129,7 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
           style={{ fontSize: "clamp(1.75rem, 6vw, 4.5rem)" }}
         >
           HANDPICKED<br />
-          <span className="text-[#FFC300]">FROM SOURCE</span>
+          <span className="text-[#1B4332]">FROM SOURCE</span>
         </h3>
         <div className="mt-4 sm:mt-6 bg-black/40 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl backdrop-blur-md border border-white/10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-md text-left flex flex-col gap-4 shadow-2xl">
           <p className="text-xs sm:text-sm md:text-lg text-white/95 font-bold leading-snug">
@@ -138,18 +138,18 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
         </div>
       </CornerBlock>
 
-      {/* ── ZONE 4: CTA (91%–100%) RIGHT ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.91} zoneEnd={1.0} position="right" textAlign="right">
-        <div className="flex flex-col items-end gap-6 sm:gap-10">
-          <div className="flex flex-col items-end gap-1 sm:gap-2">
+      {/* ── ZONE 4: CTA (91%–100%) LEFT ── */}
+      <CornerBlock progress={scrollProgress} zoneStart={0.91} zoneEnd={1.0} position="left" textAlign="left">
+        <div className="flex flex-col items-start gap-6 sm:gap-10">
+          <div className="flex flex-col items-start gap-1 sm:gap-2">
             <h2 
               className="text-white font-sans font-bold tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
               style={{ fontSize: "clamp(2.25rem, 8vw, 5.5rem)" }}
             >
               LIMITED<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">GOLD BATCH</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B4332] to-[#2D6A4F]">GOLD BATCH</span>
             </h2>
-            <p className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mt-1 sm:mt-2">
+            <p className="text-[#1B4332] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mt-1 sm:mt-2">
               Authenticated · Premium
             </p>
           </div>
@@ -158,16 +158,16 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
             <a
               id="hero-cta-collection"
               href="/collection"
-              className="px-8 sm:px-12 py-4 sm:py-5 bg-black/40 backdrop-blur-md border border-white/20 text-white font-sans font-bold rounded-full text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white/10 hover:border-[#FFC300]/50 hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-4 sm:gap-6 group shadow-xl w-full sm:w-auto"
+              className="px-10 sm:px-14 py-4 sm:py-5 bg-black/40 backdrop-blur-md border border-white/20 text-white font-sans font-bold rounded-full text-[10px] sm:text-xs md:text-sm uppercase tracking-widest transition-all duration-300 hover:bg-white/10 hover:border-[#1B4332]/50 hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-3 sm:gap-4 group shadow-xl sm:w-auto whitespace-nowrap"
             >
-              <span>Explore Collection</span>
-              <span className="text-[#FFC300] transition-transform duration-300 group-hover:translate-x-2">→</span>
+              <span className="relative z-10">Explore Collection</span>
+              <span className="text-[#1B4332] transition-transform duration-300 group-hover:translate-x-1 relative z-10">→</span>
             </a>
             
             <button
               id="hero-cta-order"
               onClick={(e) => { e.preventDefault(); onOrderNow(); }}
-              className="relative group px-8 sm:px-14 py-4 sm:py-5 bg-gradient-to-r from-[#FFC300] via-[#FF8C00] to-[#FF6A00] text-black font-sans font-black rounded-full text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 active:scale-[0.98] shadow-[0_0_30px_rgba(255,195,0,0.5)] sm:shadow-[0_10px_50px_rgba(255,195,0,0.6)] overflow-hidden w-full sm:w-auto animate-pulse flex items-center justify-center focus:outline-none"
+              className="relative group px-10 sm:px-14 py-4 sm:py-5 bg-gradient-to-r from-[#1B4332] via-[#20523C] to-[#2D6A4F] text-white font-sans font-black rounded-full text-[10px] sm:text-xs md:text-sm uppercase tracking-widest transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 active:scale-[0.98] shadow-[0_0_30px_rgba(27,67,50,0.5)] sm:shadow-[0_10px_50px_rgba(27,67,50,0.6)] overflow-hidden sm:w-auto animate-pulse flex items-center justify-center focus:outline-none whitespace-nowrap"
             >
               <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative z-10 flex items-center gap-2">Order Premium <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">❯</span></span>

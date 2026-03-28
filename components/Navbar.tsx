@@ -176,7 +176,7 @@ export function Navbar() {
             id="navbar-cta"
             href="#products"
             className={`hidden sm:inline-flex items-center justify-center font-black uppercase tracking-tight transition-all duration-500 hover:scale-[1.03] active:scale-[0.98] shadow-[0_15px_40px_rgba(255,106,0,0.2)] hover:shadow-[0_20px_60px_rgba(255,106,0,0.4)] bg-gradient-to-br from-accent to-accent-alt text-[#0c0c0c] ${
-              scrolled ? 'px-8 py-3 text-sm rounded-full' : 'px-10 py-5 text-lg rounded-full'
+              scrolled ? 'px-10 py-3 text-sm rounded-full whitespace-nowrap' : 'px-12 py-5 text-base md:text-lg rounded-full whitespace-nowrap'
             }`}
             aria-label="Shop MONA Mangoes"
           >
@@ -230,7 +230,7 @@ export function Navbar() {
               href="#products"
               id="mobile-cta"
               role="menuitem"
-              className="flex items-center justify-center gap-2 w-full px-8 py-6 rounded-full text-2xl font-black transition-all duration-300 active:scale-95 bg-gradient-to-r from-accent to-accent-alt text-[#0c0c0c] shadow-[0_15px_40px_rgba(255,106,0,0.3)]"
+              className="flex items-center justify-center gap-2 w-full px-12 py-6 rounded-full text-xl sm:text-2xl font-black transition-all duration-300 active:scale-95 bg-gradient-to-r from-accent to-accent-alt text-[#0c0c0c] shadow-[0_15px_40px_rgba(255,106,0,0.3)] whitespace-nowrap"
               onClick={() => setMobileOpen(false)}
             >
               Shop Collection

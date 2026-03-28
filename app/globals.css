@@ -4,8 +4,8 @@
 :root {
   --background:     #0c0c0c; /* Deep black for premium contrast */
   --foreground:     #f5e6c8;
-  --accent:         #FFC300;
-  --accent-alt:     #FF6A00;
+  --accent:         #1B4332; /* Deep Organic Green */
+  --accent-alt:     #2D6A4F; /* Vibrant Leaf Green */
   --font-playfair:  "Playfair Display", system-ui, serif;
   --font-cormorant: "Cormorant Garamond", system-ui, serif;
   --font-dm-serif:  "DM Serif Display", system-ui, serif;
@@ -63,6 +63,46 @@ p, .text-pretty {
   text-wrap: pretty;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+/* ── Mobile Typography & Layout Optimization ─────────────────── */
+@media (max-width: 768px) {
+  /* 1. Fluid Typography & Hierarchy Adjustments */
+  p, .text-pretty {
+    /* Minimum body text size: 16px equivalent */
+    font-size: clamp(1rem, 4vw, 1.125rem) !important;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4 {
+    /* Prevent oversized bounds & ensure breaking */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    /* Slight positive tracking, bolder weight */
+    letter-spacing: 0.02em;
+    font-weight: 700 !important;
+    line-height: 1.2;
+  }
+
+  /* Eyebrow blocks (small uppercase tracking text) */
+  span.tracking-\[0\.4em\] {
+    font-size: clamp(0.8rem, 3vw, 0.9rem) !important;
+    font-weight: 700 !important;
+  }
+
+  /* 2. Safe Spacing & Layout */
+  .container-premium {
+    /* Horizontal padding: 16px-20px safe margins */
+    padding-left: clamp(1rem, 5vw, 1.25rem) !important;
+    padding-right: clamp(1rem, 5vw, 1.25rem) !important;
+  }
+
+  /* Sub-containers restricted width to avoid screen touch */
+  .max-w-\[85vw\], .max-w-\[90vw\] {
+    max-width: 92vw !important;
+  }
 }
 
 /* ── Layout Overrides ────────────────────────────────────────── */

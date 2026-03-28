@@ -76,8 +76,8 @@ function ProgressBar({ progress }: { progress: number }) {
       className="fixed bottom-0 left-0 h-0.5 z-50 transition-none"
       style={{
         width:      `${progress * 100}%`,
-        background: "linear-gradient(90deg, #FFC300, #FF6A00)",
-        boxShadow:  "0 0 8px rgba(255,195,0,0.8)",
+        background: "linear-gradient(90deg, #1B4332, #2D6A4F)",
+        boxShadow:  "0 0 8px rgba(27,67,50,0.8)",
       }}
       role="progressbar"
       aria-valuemin={0}
@@ -170,7 +170,7 @@ export function Hero() {
                 <div
                   className="w-1 h-2.5 rounded-full"
                   style={{
-                    background: "#FFC300",
+                    background: "#1B4332",
                     animation: "floatDrift 1.6s ease-in-out infinite",
                   }}
                 />

@@ -69,10 +69,10 @@ export function OrderModal({ isOpen, onClose }: OrderModalProps) {
                   Due to the limited harvest of our Ratnagiri Alphonso crop, we operate on a priority reservation basis. Reserve your batch now for guaranteed seasonal delivery.
                 </p>
                 <div className="flex gap-4">
-                  <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-[#FFC300]">
+                  <div className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-[#FFC300] whitespace-nowrap">
                     Ratnagiri, MH
                   </div>
-                  <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-[#FFC300]">
+                  <div className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-[#FFC300] whitespace-nowrap">
                     Grade A+
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export function OrderModal({ isOpen, onClose }: OrderModalProps) {
 
                       <button
                         type="submit"
-                        className="mt-6 w-full py-6 bg-[#FFC300] text-[#0a0a0a] font-black uppercase tracking-[0.2em] text-xs transition-all hover:bg-[#FFD54F] active:scale-[0.98] shadow-[0_20px_40px_rgba(255,195,0,0.15)]"
+                        className="mt-6 w-full py-6 rounded-full bg-[#FFC300] text-[#0a0a0a] font-black uppercase tracking-[0.2em] text-xs transition-all hover:bg-[#FFD54F] active:scale-[0.98] shadow-[0_20px_40px_rgba(255,195,0,0.15)] whitespace-nowrap"
                       >
                         Confirm Reservation Request
                       </button>
