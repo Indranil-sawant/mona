@@ -69,7 +69,10 @@ export function HeroCanvas({ scrollProgress, className = "" }: HeroCanvasProps) 
     if (imgAspect > canvasAspect) {
       // Image is wider – crop sides
       sw = img.naturalHeight * canvasAspect;
-      sx = (img.naturalWidth - sw) / 2;
+      // MOBILE FIX: On narrow screens, the main mango sits on the right. 
+      // Bias the crop heavily to the right so it isn't cut off.
+      const alignX = canvasAspect < 1.0 ? 0.85 : 0.5;
+      sx = (img.naturalWidth - sw) * alignX;
     } else {
       // Image is taller – crop top/bottom
       sh = img.naturalWidth / canvasAspect;
