@@ -27,13 +27,16 @@ function easeOut(t: number): number {
 }
 
 function zoneVisible(p: number, start: number, end: number) {
-  if (p < start || p > end) {
+  if (p < start || (end < 1.0 && p > end)) {
     return { opacity: 0, tx: -15, ty: 0 };
+  }
+  if (p >= end && end === 1.0) {
+    return { opacity: 1, tx: 0, ty: 0 };
   }
   const len   = end - start;
   const local = (p - start) / len;
   const fade  = 0.3; 
-  let v = (local < fade) ? easeOut(local / fade) : (local > 1 - fade) ? easeOut((1 - local) / fade) : 1;
+  let v = (local < fade) ? easeOut(local / fade) : (local > 1 - fade && end < 1.0) ? easeOut((1 - local) / fade) : 1;
   return { opacity: v, tx: (1 - v) * -15, ty: 0 };
 }
 
@@ -151,21 +154,23 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mt-2 sm:mt-4 pointer-events-auto">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto mt-4 sm:mt-8 pointer-events-auto">
             <a
               id="hero-cta-collection"
               href="/collection"
-              className="px-8 sm:px-10 py-4 sm:py-5 bg-white/5 border border-white/10 text-white font-bold rounded-full text-[10px] sm:text-xs uppercase tracking-widest transition-all hover:bg-white/10 active:scale-[0.97] flex items-center justify-center gap-4 sm:gap-6 group"
+              className="px-8 sm:px-12 py-4 sm:py-5 bg-black/40 backdrop-blur-md border border-white/20 text-white font-sans font-bold rounded-full text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white/10 hover:border-[#FFC300]/50 hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-4 sm:gap-6 group shadow-xl w-full sm:w-auto"
             >
-              <span>Collection</span>
-              <span className="text-[#FFC300] transition-transform group-hover:translate-x-2">→</span>
+              <span>Explore Collection</span>
+              <span className="text-[#FFC300] transition-transform duration-300 group-hover:translate-x-2">→</span>
             </a>
+            
             <button
               id="hero-cta-order"
               onClick={(e) => { e.preventDefault(); onOrderNow(); }}
-              className="px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-[#FFC300] to-[#FF6A00] text-black font-bold rounded-full text-xs sm:text-sm uppercase tracking-widest transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(255,195,0,0.4)] sm:shadow-[0_0_40px_rgba(255,195,0,0.5)]"
+              className="relative group px-8 sm:px-14 py-4 sm:py-5 bg-gradient-to-r from-[#FFC300] via-[#FF8C00] to-[#FF6A00] text-black font-sans font-black rounded-full text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 active:scale-[0.98] shadow-[0_0_30px_rgba(255,195,0,0.5)] sm:shadow-[0_10px_50px_rgba(255,195,0,0.6)] overflow-hidden w-full sm:w-auto animate-pulse flex items-center justify-center focus:outline-none"
             >
-              Order Now
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative z-10 flex items-center gap-2">Order Premium <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">❯</span></span>
             </button>
           </div>
         </div>
