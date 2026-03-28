@@ -83,32 +83,32 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
       
       {/* ── ZONE 1: BRAND INTRO (0%–33%) LEFT ── */}
       <CornerBlock progress={scrollProgress} zoneStart={0} zoneEnd={0.33} position="left" textAlign="left">
-        <span className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
+        <span className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Harvested For Perfection
         </span>
         <h1 
-          className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
-          style={{ fontSize: "clamp(3rem, 12vw, 9rem)" }}
+          className="text-white font-sans font-bold tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+          style={{ fontSize: "clamp(2.5rem, 10vw, 7.5rem)" }}
         >
           MONA<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">MANGOES</span>
         </h1>
         <div className="mt-4 sm:mt-8 flex items-center gap-3 sm:gap-5 max-w-[85vw]">
           <div className="w-8 sm:w-16 h-1 bg-[#FF6A00] shrink-0 drop-shadow-md" />
-          <p className="text-base sm:text-lg md:text-2xl text-white/90 font-medium drop-shadow-md text-pretty">
-            Indulge in <span className="text-[#FFC300] font-serif italic pr-1 whitespace-nowrap">Pure Sweetness</span>
+          <p className="text-sm sm:text-base md:text-xl text-white/90 font-bold drop-shadow-md text-pretty">
+            Indulge in <span className="text-[#FFC300] font-sans italic pr-1 whitespace-nowrap">Pure Sweetness</span>
           </p>
         </div>
       </CornerBlock>
 
       {/* ── ZONE 2: EXCELLENCE (35%–64%) RIGHT ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.35} zoneEnd={0.64} position="right" textAlign="left">
-        <span className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
+      <CornerBlock progress={scrollProgress} zoneStart={0.35} zoneEnd={0.64} position="right" textAlign="right">
+        <span className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Premium Selection
         </span>
         <h2 
-          className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
-          style={{ fontSize: "clamp(2.5rem, 10vw, 7rem)" }}
+          className="text-white font-sans font-bold tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+          style={{ fontSize: "clamp(2.25rem, 8vw, 6rem)" }}
         >
           EXCELLENCE<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">IN EVERY BITE</span>
@@ -118,35 +118,35 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
 
       {/* ── ZONE 3: ORIGIN (66%–89%) LEFT ── */}
       <CornerBlock progress={scrollProgress} zoneStart={0.66} zoneEnd={0.89} position="left" textAlign="left">
-        <span className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
+        <span className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2 sm:mb-4 block drop-shadow-md">
           Authentic Provenance
         </span>
         <h3 
-          className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
-          style={{ fontSize: "clamp(2rem, 8vw, 5.5rem)" }}
+          className="text-white font-sans font-bold tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+          style={{ fontSize: "clamp(1.75rem, 6vw, 4.5rem)" }}
         >
           HANDPICKED<br />
           <span className="text-[#FFC300]">FROM SOURCE</span>
         </h3>
         <div className="mt-4 sm:mt-6 bg-black/40 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl backdrop-blur-md border border-white/10 w-full max-w-[280px] sm:max-w-[320px] md:max-w-md text-left flex flex-col gap-4 shadow-2xl">
-          <p className="text-sm sm:text-base md:text-xl text-white/95 font-medium leading-snug">
+          <p className="text-xs sm:text-sm md:text-lg text-white/95 font-bold leading-snug">
             Directly from the sun-drenched orchards of Ratnagiri, where generation-old tradition meets modern excellence.
           </p>
         </div>
       </CornerBlock>
 
       {/* ── ZONE 4: CTA (91%–100%) RIGHT ── */}
-      <CornerBlock progress={scrollProgress} zoneStart={0.91} zoneEnd={1.0} position="right" textAlign="left">
-        <div className="flex flex-col items-start gap-6 sm:gap-10">
-          <div className="flex flex-col items-start gap-1 sm:gap-2">
+      <CornerBlock progress={scrollProgress} zoneStart={0.91} zoneEnd={1.0} position="right" textAlign="right">
+        <div className="flex flex-col items-end gap-6 sm:gap-10">
+          <div className="flex flex-col items-end gap-1 sm:gap-2">
             <h2 
-              className="text-white font-serif tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
-              style={{ fontSize: "clamp(2.5rem, 9vw, 6rem)" }}
+              className="text-white font-sans font-bold tracking-tighter leading-[0.85] drop-shadow-2xl uppercase"
+              style={{ fontSize: "clamp(2.25rem, 8vw, 5.5rem)" }}
             >
               LIMITED<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC300] to-[#FF6A00]">GOLD BATCH</span>
             </h2>
-            <p className="text-[#FFC300] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] uppercase mt-1 sm:mt-2">
+            <p className="text-[#FFC300] text-[9px] sm:text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mt-1 sm:mt-2">
               Authenticated · Premium
             </p>
           </div>
@@ -155,7 +155,7 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
             <a
               id="hero-cta-collection"
               href="/collection"
-              className="px-8 sm:px-10 py-4 sm:py-5 bg-white/5 border border-white/10 text-white font-black rounded-full text-xs sm:text-sm uppercase tracking-widest transition-all hover:bg-white/10 active:scale-[0.97] flex items-center justify-center gap-4 sm:gap-6 group"
+              className="px-8 sm:px-10 py-4 sm:py-5 bg-white/5 border border-white/10 text-white font-bold rounded-full text-[10px] sm:text-xs uppercase tracking-widest transition-all hover:bg-white/10 active:scale-[0.97] flex items-center justify-center gap-4 sm:gap-6 group"
             >
               <span>Collection</span>
               <span className="text-[#FFC300] transition-transform group-hover:translate-x-2">→</span>
@@ -163,7 +163,7 @@ export function HeroTextOverlays({ scrollProgress, onOrderNow }: HeroTextOverlay
             <button
               id="hero-cta-order"
               onClick={(e) => { e.preventDefault(); onOrderNow(); }}
-              className="px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-[#FFC300] to-[#FF6A00] text-black font-black rounded-full text-sm sm:text-lg uppercase tracking-widest transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(255,195,0,0.4)] sm:shadow-[0_0_40px_rgba(255,195,0,0.5)]"
+              className="px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-[#FFC300] to-[#FF6A00] text-black font-bold rounded-full text-xs sm:text-sm uppercase tracking-widest transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(255,195,0,0.4)] sm:shadow-[0_0_40px_rgba(255,195,0,0.5)]"
             >
               Order Now
             </button>

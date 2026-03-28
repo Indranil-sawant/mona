@@ -6,7 +6,9 @@
   --foreground:     #f5e6c8;
   --accent:         #FFC300;
   --accent-alt:     #FF6A00;
-  --font-outfit:    "Outfit", system-ui, sans-serif;
+  --font-playfair:  "Playfair Display", system-ui, serif;
+  --font-cormorant: "Cormorant Garamond", system-ui, serif;
+  --font-dm-serif:  "DM Serif Display", system-ui, serif;
   --section-px:     clamp(1.5rem, 6vw, 5rem);
   --header-height:  5rem; /* ~80px */
 }
@@ -16,8 +18,9 @@
   --color-foreground: var(--foreground);
   --color-accent:     var(--accent);
   --color-accent-alt: var(--accent-alt);
-  --font-sans:        var(--font-outfit);
-  --font-serif:       var(--font-playfair);
+  --font-sans:        var(--font-playfair);
+  --font-serif:       var(--font-cormorant);
+  --font-accent:      var(--font-dm-serif);
 }
 
 /* ── Global reset / base ─────────────────────────────────────── */
@@ -39,7 +42,7 @@ html {
 body {
   background: var(--background);
   color:      var(--foreground);
-  font-family: var(--font-outfit);
+  font-family: var(--font-playfair);
   -webkit-font-smoothing:  antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

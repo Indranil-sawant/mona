@@ -167,12 +167,12 @@ export function StoryTextOverlays({ scrollProgress }: StoryTextOverlaysProps) {
         </div>
       </CornerBlock>
 
-      {/* ── ZONE 4: FINALE (91%–100%) RIGHT ── */}
+      {/* ── ZONE 4: FINALE (91%–100%) LEFT ── */}
       <CornerBlock
         progress={scrollProgress}
         zoneStart={0.91}
         zoneEnd={1.0}
-        position="right"
+        position="left"
         textAlign="left"
       >
         <div className="flex flex-col items-start gap-8 sm:gap-12 pointer-events-auto">

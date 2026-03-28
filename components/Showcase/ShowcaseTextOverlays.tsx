@@ -107,24 +107,24 @@ export function ShowcaseTextOverlays({ scrollProgress }: Props) {
       </Segment>
 
       {/* ── Segment 3 (0.50 – 0.75) ────────────────────────── */}
-      <Segment progress={scrollProgress} start={0.50} end={0.75} position="right" textAlign="left">
-        <div className="flex flex-col items-start w-full">
+      <Segment progress={scrollProgress} start={0.50} end={0.75} position="right" textAlign="right">
+        <div className="flex flex-col items-end w-full">
           <h2 
-            className="text-[#FF6A00] font-black tracking-tight drop-shadow-2xl uppercase leading-none"
+            className="text-[#FF6A00] font-accent tracking-tight drop-shadow-2xl uppercase leading-none"
             style={{ fontSize: "clamp(2rem, 7vw, 5.5rem)" }}
           >
             Nature&apos;s
           </h2>
           <h2 
-            className="text-white font-black tracking-tighter drop-shadow-2xl leading-none -mt-1 sm:-mt-2"
+            className="text-white font-sans font-black tracking-tighter drop-shadow-2xl leading-none -mt-1 sm:-mt-2"
             style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
           >
             GOLD
           </h2>
         </div>
         
-        <div className="mt-4 sm:mt-8 bg-black/40 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl backdrop-blur-md border border-white/10 w-full max-w-[280px] sm:max-w-full text-left flex flex-col gap-4 shadow-2xl">
-          <p className="text-sm sm:text-base md:text-xl text-white/95 font-medium leading-snug">
+        <div className="mt-4 sm:mt-8 bg-black/40 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl backdrop-blur-md border border-white/10 w-full max-w-[280px] sm:max-w-md text-right flex flex-col gap-4 shadow-2xl">
+          <p className="text-sm sm:text-base md:text-xl text-white/95 font-serif font-medium leading-snug">
             Unmatched sweetness. Hand-harvested at perfect ripeness for a breathtaking tropical flavor.
           </p>
         </div>

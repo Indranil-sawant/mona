@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import "../styles/hero.css";
 
-/* ── Outfit font ────────────────────────────────────────────── */
-const outfit = Outfit({
-  variable:       "--font-outfit",
-  subsets:        ["latin"],
-  weight:         ["400", "500", "600", "700", "800"],
-  display:        "swap",
-});
-
-/* ── Luxury Serif ───────────────────────────────────────────── */
+/* ── Primary: Playfair Display ─────────────────────────── */
 const playfair = Playfair_Display({
   variable:       "--font-playfair",
   subsets:        ["latin"],
-  weight:         ["400", "600", "800", "900"],
+  weight:         ["400", "500", "600", "700", "800", "900"],
+  display:        "swap",
+});
+
+/* ── Secondary: Cormorant Garamond ─────────────────────── */
+const cormorant = Cormorant_Garamond({
+  variable:       "--font-cormorant",
+  subsets:        ["latin"],
+  weight:         ["300", "400", "500", "600", "700"],
+  display:        "swap",
+});
+
+/* ── Accent: DM Serif Display ──────────────────────────── */
+const dmSerif = DM_Serif_Display({
+  variable:       "--font-dm-serif",
+  subsets:        ["latin"],
+  weight:         ["400"],
   display:        "swap",
 });
 
@@ -39,11 +47,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${playfair.variable} h-full antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${cormorant.variable} ${dmSerif.variable} h-full antialiased`}>
       <body
         className="min-h-full flex flex-col"
         style={{
-          fontFamily: "var(--font-outfit), system-ui, sans-serif",
+          fontFamily: "var(--font-playfair), system-ui, serif",
           background: "#1a1a1a",
           color:      "#f5e6c8",
         }}
