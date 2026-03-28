@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Story } from "@/components/Story";
 import { ShowcaseSection } from "@/components/Showcase";
+import { ExperienceSection } from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
 
       {/* ── Showcase: The Varieties ────────────────────────── */}
       <ShowcaseSection />
+
+      {/* ── Experience: The Finale ─────────────────────────── */}
+      <ExperienceSection />
 
       {/* ── Product listings ─────────────────────────────── */}
 
